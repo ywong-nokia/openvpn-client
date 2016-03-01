@@ -3,4 +3,4 @@ FROM alpine
 ENTRYPOINT ["openvpn"]
 VOLUME ["/vpn"]
 
-RUN apk add --update openvpn
+RUN apk add --no-cache openvpn
