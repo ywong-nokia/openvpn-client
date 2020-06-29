@@ -1,4 +1,4 @@
-FROM alpine AS qemu
+FROM alpine:3.12 AS qemu
 
 #QEMU Download
 ENV QEMU_URL https://github.com/balena-io/qemu/releases/download/v4.0.0%2Bbalena2/qemu-4.0.0.balena2-arm.tar.gz
@@ -11,4 +11,4 @@ COPY --from=qemu qemu-arm-static /usr/bin
 ENTRYPOINT ["openvpn"]
 VOLUME ["/vpn"]
 
-RUN apk add --no-cache openvpn
+RUN apk add --no-cache openvpn=2.4.9-r0
