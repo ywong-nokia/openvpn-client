@@ -1,4 +1,4 @@
-Forked from ekristen. Add multiarch-builds and tags for OpenVPN.
+Forked from ekristen. Add automated multiarch-builds and tags for OpenVPN. Check out [jnovack/docker-multi-arch-hooks](https://github.com/jnovack/docker-multi-arch-hooks) for that.
 
 # Docker OpenVPN Client
 
