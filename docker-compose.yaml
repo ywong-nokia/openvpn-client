@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  openvpn-client:
+    build:
+      context: build
+    container_name: openvpn-client
+    restart: always
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    command: --config /vpn/client.ovpn --askpass /vpn/client.pwd --auth-nocache
+    volumes:
+      - ./client/:/vpn
+    networks:
+      - openvpn
+networks:
+  openvpn:
+    driver: bridge
