@@ -1,0 +1,9 @@
+FROM arm32v6/alpine:3.12
+
+# Copy downloaded architecture emulation static binary
+COPY qemu-arm-static /usr/bin/
+
+ENTRYPOINT ["openvpn"]
+VOLUME ["/vpn"]
+
+RUN apk add --no-cache openvpn=2.4.9-r0
