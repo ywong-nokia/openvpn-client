@@ -1,5 +1,8 @@
 FROM arm32v6/alpine:3.12
 
+# Copy downloaded architecture emulation static binary
+COPY qemu-arm-static /usr/bin/
+
 ARG BUILD_RFC3339="1970-01-01T00:00:00Z"
 ARG COMMIT
 ARG VERSION
@@ -16,9 +19,6 @@ LABEL org.opencontainers.image.ref.name="frauhottelmann/docker-openvpn-client" \
       org.opencontainers.image.revision=$COMMIT \
       org.opencontainers.image.version=$VERSION \
       org.opencontainers.image.url="https://hub.docker.com/r/frauhottelmann/openvpn-client"
-
-# Copy downloaded architecture emulation static binary
-COPY qemu-arm-static /usr/bin/
 
 ENTRYPOINT ["openvpn"]
 VOLUME ["/vpn"]
