@@ -21,4 +21,3 @@ ENTRYPOINT ["openvpn"]
 VOLUME ["/vpn"]
 
 RUN apk add --no-cache openvpn=2.4.9-r0 
-v
