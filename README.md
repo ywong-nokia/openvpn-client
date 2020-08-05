@@ -26,24 +26,19 @@ docker run -it --rm \
 
 # docker-compose example:
 ```yaml
-version: '2'
+version: '3'
 
 services:
   openvpn-client:
-    build:
-      context: build
-    container_name: frauhottelmann/openvpn-client:tag
+    image: frauhottelmann/openvpn-client
+    container_name: openvpn-client
     restart: always
     cap_add:
       - NET_ADMIN
     devices:
-      - /dev/net/tun:/dev/net/tun
+      - "/dev/net/tun:/dev/net/tun"
     command: --config /vpn/client.ovpn --askpass /vpn/client.pwd --auth-nocache
     volumes:
       - ./client/:/vpn
-    networks:
-      - openvpn
-networks:
-  openvpn:
-    driver: bridge
+    network_mode: "bridge"
 ```
