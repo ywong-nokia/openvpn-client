@@ -1,4 +1,4 @@
-FROM arm32v7/alpine:3.12
+FROM arm32v7/alpine:3.13
 
 # Copy downloaded architecture emulation static binary
 COPY qemu-arm-static /usr/bin/
@@ -23,4 +23,4 @@ LABEL org.opencontainers.image.ref.name="frauhottelmann/openvpn-client" \
 ENTRYPOINT ["openvpn"]
 VOLUME ["/vpn"]
 
-RUN apk add --no-cache openvpn=2.4.9-r0
+RUN apk add --no-cache openvpn=2.5.0-r1
