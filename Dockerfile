@@ -1,4 +1,4 @@
-FROM alpine:3.14.0
+FROM alpine:3.14
 
 ARG BUILD_RFC3339="1970-01-01T00:00:00Z"
 ARG COMMIT
@@ -20,4 +20,4 @@ LABEL org.opencontainers.image.ref.name="frauhottelmann/openvpn-client" \
 ENTRYPOINT ["openvpn"]
 VOLUME ["/vpn"]
 
-RUN apk add --no-cache openvpn=2.5.0-r1 
+RUN apk add --no-cache openvpn=2.5.2-r0
