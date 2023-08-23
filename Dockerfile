@@ -6,16 +6,16 @@ ARG VERSION
 
 STOPSIGNAL SIGKILL
 
-LABEL org.opencontainers.image.ref.name="frauhottelmann/openvpn-client" \
+LABEL org.opencontainers.image.ref.name="ywong-nokia/openvpn-client" \
       org.opencontainers.image.created=$BUILD_RFC3339 \
-      org.opencontainers.image.authors="frauhottelmann" \
-      org.opencontainers.image.documentation="https://github.com/frauhottelmann/openvpn-client/blob/master/README.md" \
+      org.opencontainers.image.authors="ywong-nokia" \
+      org.opencontainers.image.documentation="https://github.com/ywong-nokia/openvpn-client/blob/master/README.md" \
       org.opencontainers.image.description="OpenVPN Client in a Docker Container" \
       org.opencontainers.image.licenses="GPLv3" \
-      org.opencontainers.image.source="https://github.com/frauhottelmann/openvpn-client" \
+      org.opencontainers.image.source="https://github.com/ywong-nokia/openvpn-client" \
       org.opencontainers.image.revision=$COMMIT \
       org.opencontainers.image.version=$VERSION \
-      org.opencontainers.image.url="https://hub.docker.com/r/frauhottelmann/openvpn-client"
+      org.opencontainers.image.url="https://hub.docker.com/r/ywong-nokia/openvpn-client"
 
 # https://johnsiu.com/blog/alpine-vscode/
 RUN apk update && apk add --no-cache wget curl nano vim sudo openvpn openssh bash gcompat libstdc++
